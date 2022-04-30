@@ -4,3 +4,4 @@ package.json
 firebase.json
 .firebaserc
 .firebase/
+.credentials
