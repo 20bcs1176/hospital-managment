@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>seek coding</title>
+    <link rel="stylesheet" href="Login_style.css">
+
+</head>
+
+<body>
+    <div class="full-page">
+        <div class='navbar'>
+
+            <div>
+                <img src="./img/logo.jpg" alt="logo" class="logo">
+            </div>
+
+        </div>
+
+
+        <div id='login-form' class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>Doctor</button>
+                    <button type='button' onclick='register()' class='toggle-btn'>Meeting</button>
+                </div>
+                <form id='login' class='input-group-login'>
+                    <input type='text' class='input-field' placeholder="Disease Name" required>
+                    <input type='text' class='input-field' placeholder="Doctor's Name" required>
+                    <input type='password' class='input-field' placeholder="Doctor's Id" required>
+                    <input type='password' class='input-field' placeholder="Patient's Id" required>
+                    <input type='checkbox' class='check-box'><span class="rem-pass">Remember Patient's I'd</span>
+                    <button class='submit-btn' onclick="register()">Book appointment with Doctor</button>
+                </form>
+
+                <form id='register' class='input-group-register'>
+                    <input type='text' class='input-field' placeholder='Enter E-mail' required>
+                    <input type='text' class='input-field' placeholder='Enter Phone no.' required>
+                    <input type='email' class='input-field' placeholder='Enter Date' required>
+                    <input type='password' class='input-field' placeholder='Enter Time' required>
+                    <input type='password' class='input-field' placeholder='Agenda' required>
+                    <input type='checkbox' class='check-box'><span class="rem-pass">I agree to the terms and
+                        conditions</span>
+
+                    <button type='submit' class='submit-btn' onclick="myFunction()">Book Appointment</button>
+
+
+                    <script>
+                        function myFunction() {
+                            alert("Your appointment is booked with the doctor! Thank You");
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+    <!-- 
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function (event) {
+
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script> -->
+</body>
+
+</html>

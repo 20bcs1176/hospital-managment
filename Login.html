@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="Login_style.css">
+
+</head>
+
+<body>
+    <div class="full-page">
+        <div class='navbar'>
+
+            <div>
+                <img src="./img/logo.jpg" alt="logo" class="logo">
+            </div>
+
+        </div>
+
+
+        <div id='login-form' class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                    <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+                </div>
+                <form id='login' class='input-group-login'>
+                    <input name="Email_Id" id="email" type='text' class='input-field' placeholder='Email Id' required>
+                    <input type='password' name="Password" id="password" class='input-field' placeholder='Enter password' required>
+                    <input type='checkbox' class='check-box'><span class="rem-pass">Remember Password</span>
+                    <button type='button' class='submit-btn' value="Submit" onclick="register()">Submit</button>
+                </form>
+
+                <form id='register' class='input-group-register' method="post" action="./submit.php">
+                    <input type='text' name="First_Name" class='input-field' placeholder='First Name' required>
+                    <input type='text' name="Last_Name" class='input-field' placeholder='Last Name' required>
+                    <input type='email' class='input-field' placeholder='Email Id' name="EmailId" required>
+                    <input type='password' name="Enter_Password" class='input-field' placeholder='Enter Password'
+                        required>
+                    <input type='password' name="Confirm_Password" class='input-field' placeholder='Confirm Password'
+                        required>
+                    <input type='checkbox' class='check-box'><span class="rem-pass">I agree to the terms and
+                        conditions</span>
+
+                    <input type='submit' class='submit-btn' value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+
+    <script>
+        const login_btn = document.querySelector('button.submit-btn');
+        login_btn.addEventListener('click', (e) => {
+            const email = document.querySelector('input#email');
+            const password = document.querySelector('input#password');
+            console.log('Clicked!!');
+            var email_value = email.value;
+            var password_value = password.value;
+            email_value.trim();
+            password_value.trim();
+            if (!email_value){
+                alert('Please enter a valid email');
+                e.preventDefault();
+                return;
+            }
+            if (!password_value){
+                alert('Please enter a valid password');
+                e.preventDefault();
+                return;
+            }
+            const credentials = {
+                email: email.value,
+                password: password.value
+            };
+            fetch('./')
+        });
+    </script>
+</body>
+
+</html>
