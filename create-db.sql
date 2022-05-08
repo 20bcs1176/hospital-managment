@@ -37,9 +37,9 @@ CREATE TABLE IF NOT EXISTS Credentials (
 );
 
 CREATE VIEW IF NOT EXISTS Doctors_Name AS 
-    SELECT First_name, Last_name FROM Doctors;
+    SELECT Doctor_ID, First_name, Last_name FROM Doctors;
 CREATE VIEW IF NOT EXISTS Patients_Name AS
-    SELECT First_name, Last_name FROM Patients;
+    SELECT Patient_ID, First_name, Last_name FROM Patients;
 
 INSERT INTO Doctors(First_name, Last_name, Age, Phone, Dept) VALUES
     ('Raju', 'Rastogi', 45, '9988776655', 'Cardiology'),

@@ -1,0 +1,68 @@
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    --nav-width: 85%;
+    --nav-height: 90px;
+    --nav-bgcolor: #ffffff;
+    --work-sans-font: 'Work Sans', sans-serif;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+nav img{
+    max-height: 100%;
+}
+nav .img-wrapper{
+    display: flex;
+    align-items: center;
+}
+nav{
+    background-color: var(--nav-bgcolor);
+    display: flex;
+    width: var(--nav-width);
+    height: var(--nav-height);
+    align-items: stretch;
+    justify-content: space-between;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+
+}
+nav a{
+    text-decoration: none;
+}
+nav li{
+    display: inline-block;
+    line-height: var(--nav-height);
+    text-align: center;
+    margin: auto 1rem 1rem;
+    font-family: var(--work-sans-font);
+    text-transform: uppercase;
+    color: #222222;
+    position: relative;
+}
+
+.header-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/Doctor.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+    font-size: 3rem;
+    font-weight: bold;
+}
