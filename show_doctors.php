@@ -17,7 +17,7 @@
     <header>
         <nav>
             <div class="img-wrapper">
-                <a><img src="./img/logo.jpg" alt="Heritage Hospitals"></a>
+                 <a><img src="./img/logo.jpg" alt="Heritage Hospitals"></a>
             </div>
             <div>
                 <ul class="nav-list">
@@ -82,8 +82,16 @@
     </section>
 
     <footer>
-        
-    </footer>    
+        <div class="col-wrapper">
+            <h5>Products</h5>
+            <ul>
+                <li>Appointments</li>
+                <li>Appointments</li>
+                <li>Appointments</li>
+                <li>Appointments</li>
+            </ul>
+        </div>
+    </footer>
     <script src="./scripts/show_doctors.js"></script>
 </body>
 </html>
