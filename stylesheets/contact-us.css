@@ -1,5 +1,46 @@
-.man-form{
+.contact-us{
+    font-size: 16px;
+    color: #3C3D41;
+}
 
+.contact-table{
+    background-color: #EEEEEE;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+    display: grid;
+    list-style: none;
+    padding: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    line-height: 2em;
+}
+.contact-table li{
+    background-color: white;
+    text-align: center;
+}
+
+.contact-us h2{
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+.contact-us h4{
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.contact-us label{
+    display: block;
+}
+.contact-us input{
+    width: 100%;
+}
+.contact-us textarea{
+    width: 100%;
+}
+
+
+.man-form{
     font-family: Arial, Helvetica, sans-serif;
     padding: 1em 5% 5%;
     display: flex;
@@ -13,15 +54,24 @@
     width: auto;
     padding: 1em;
 }
-
+.man-form label{
+    margin-bottom: 0.2em;
+}
 .man-form input[type="submit"]{
-    max-width: fit-content;
     margin-left: 1em;
+    max-width: fit-content;
+    background-color: #ff7a59;
+    font-weight: bold;
+    color: white;
+    padding: 0.5em 2em;
+    border: 1px #ff7a59 solid;
+    border-radius: 0.4em;
 }
 
 .man-form input:not([type="submit"]), textarea{
     padding: 5px;
     background-color: #EEEEEE;
+    border: 1px solid #AAAAAA;
 }
 
 .man-form input:not([type="submit"]):focus, textarea:focus{
@@ -30,13 +80,3 @@
     box-shadow: 0px 0px 3px red;
 }
 
-#about-us{
-    font-family: "Work Sans", Sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding: 0px 15px 0px 15px;
-    color: #000000;
-    text-align: center;
-    line-height: 50px;
-}

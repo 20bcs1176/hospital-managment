@@ -56,9 +56,13 @@ nav ul {
   display: flex;
   align-items: stretch;
 }
-nav a {
+nav a,
+nav a:active,
+nav a:visited{
   text-decoration: none;
+  color: inherit;
 }
+
 nav li {
   display: inline-block;
   line-height: var(--nav-height);
@@ -158,7 +162,8 @@ footer img {
 }
 
 section {
-  max-width: var(--section-width);
+  width: var(--section-width);
+  font-family: var(--work-sans-font);
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
