@@ -8,7 +8,10 @@
   --work-sans-font: "Work Sans", sans-serif;
 
   --footer-height: 300px;
-  --footer-bgcolor: rgb(8, 8, 153);
+  --footer-bgcolor: #191c49;
+  --foter-font-color: #fff;
+
+  --section-width: 80%;
 }
 
 *,
@@ -17,6 +20,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header {
@@ -59,7 +69,6 @@ nav li {
   color: #222222;
 }
 
-
 .header-img-wrapper {
   display: flex;
   align-items: center;
@@ -72,13 +81,50 @@ nav li {
   font-weight: bold;
 }
 
+.dropdown:hover {
+  position: relative;
+}
+
+.nav-dropdown {
+  display: none;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  width: 15rem;
+  background-color: #fff;
+  border: rgb(190, 190, 190) solid 0.5px;
+  overflow: visible;
+}
+
+@keyframes smooth-pop {
+    0% {transform: translateY(-0.5rem);}
+    100% {transform: translateY(0rem);}
+}
+.dropdown:hover .nav-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  animation: smooth-pop 200ms;
+}
+.nav-dropdown-item {
+  line-height: 100%;
+  padding: 1rem;
+  text-align: left;
+}
+
 footer {
-  width: 100%;
-  min-height: var(--footer-height);
   background-color: var(--footer-bgcolor);
+  min-height: var(--footer-height);
+  width: 100%;
+  color: var(--foter-font-color);
+  font-family: var(--work-sans-font);
+}
+.footer-wrapper {
   display: flex;
   justify-content: space-evenly;
   padding-top: 3rem;
+  padding-bottom: 4rem;
 }
 
 footer ul {
@@ -88,6 +134,33 @@ footer ul {
   flex-direction: column;
   justify-content: space-evenly;
 }
-footer li{
-  padding: 2rem auto;
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-top: 0.5px solid #555;
+  letter-spacing: 0.05rem;
+  font-size: 0.7rem;
+}
+
+footer li:first-child {
+  font-weight: bold;
+}
+
+footer li {
+  padding: 1rem 0.1rem;
+  font-weight: normal;
+}
+
+footer img {
+  height: 2.5rem;
+}
+
+section {
+  max-width: var(--section-width);
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

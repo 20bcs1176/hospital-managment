@@ -46,48 +46,26 @@
 
     <section>
 
-<?php
-    $connDetails = array(
-        'host' => 'localhost',
-        'user' => 'root',
-        'pass' => '',
-        'db' => 'hospital'
-    );
-    function makeConn($connDetails){
-        $conn = new mysqli(
-            $connDetails['host'],
-            $connDetails['user'],
-            $connDetails['pass'],
-            $connDetails['db']
-        );
-        return $conn ?? NULL;
-    }
-    function makeReadQuery($conn, $query){
-        $result = $conn->query($query);
-        return $result ?? NULL;
-    }
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo autem architecto, perspiciatis est,
+            voluptas voluptatem reprehenderit commodi aspernatur tempora sunt maiores. Voluptates eum quia id laboriosam
+            officia voluptatem, beatae vitae vel repellendus et ducimus recusandae quo ipsum libero tenetur atque eaque
+            ea enim temporibus! Asperiores quasi id ad blanditiis et.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quasi velit eveniet accusantium blanditiis,
+            aperiam voluptate aliquam laboriosam, unde obcaecati cumque tempora eligendi excepturi, modi vero! Eius,
+            aliquam aut ipsum officiis cum, numquam error, ex maxime veniam autem maiores possimus alias! Est quae
+            facere reiciendis? Mollitia, optio, excepturi eius in voluptate ipsum facilis totam saepe itaque dignissimos
+            est laborum. Culpa.</p>
 
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste voluptatibus itaque quibusdam sit fuga minima
+            enim tempora ratione commodi exercitationem inventore harum aliquam, dolorem nihil. Modi perspiciatis magni
+            ipsam ut.
+        </p>
 
-    $conn = makeConn($connDetails);
-?>
-
-
-        <form action="POST" target="_self" class="search">
-            <label for="doctor-name">Filter by Doctors</label>
-            <select name="doctor-name" id="doctor-name">
-                <?php 
-                    function echoOption($doctId, $doctName) {
-                        echo "<option value='$doctId'>$doctName</option>";
-                    }
-
-                    $result = makeReadQuery($conn, "SELECT * FROM Doctors_Name");
-                    while($doctor = $result->fetch_assoc())
-                        echoOption($doctor['Doctor_Id'], $doctor['First_name'].' '
-                        .$doctor['Last_name']);
-                ?>
-            </select>
-        </form>
-                
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptates repudiandae commodi vero quaerat?
+            Quis dolor libero nam quidem deleniti alias. Incidunt officia autem porro non saepe. Impedit ad ullam
+            mollitia obcaecati in! Reprehenderit neque, quasi repellendus quo labore quisquam doloribus excepturi fuga
+            earum odio! Et nemo eaque odit deserunt eum laborum libero veniam, omnis consequuntur excepturi labore
+            inventore animi?</p>
     </section>
 
     <footer>
