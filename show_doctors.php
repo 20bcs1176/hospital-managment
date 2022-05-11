@@ -82,13 +82,34 @@
     </section>
 
     <footer>
+
+        <div class="col-wrapper">
+            <img src="./img/logo.jpg" alt="Logo">
+            <ul>
+                <li>718, Hansa Plaza, Bangalore, India</li>
+                <li>contactus@docpulse.com</li>
+                <li>080 46837034</li>
+                <li>About us</li>
+            </ul>
+        </div>
+        
         <div class="col-wrapper">
             <h5>Products</h5>
             <ul>
                 <li>Appointments</li>
-                <li>Appointments</li>
-                <li>Appointments</li>
-                <li>Appointments</li>
+                <li>Telemedicine Software</li>
+                <li>Appointment Scheduling Software</li>
+                <li>IVR Appointment Booking Software</li>
+            </ul>
+        </div>
+
+        <div class="col-wrapper">
+            <h5>Solutions</h5>
+            <ul>
+                <li>Clinic Management Software</li>
+                <li>Medical Software</li>
+                <li>Hospital Managment Software</li>
+                <li>Clinic Chains</li>
             </ul>
         </div>
     </footer>
