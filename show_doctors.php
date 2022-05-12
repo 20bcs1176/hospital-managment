@@ -27,7 +27,7 @@
                     <li><a href="./index.html">Home</a></li>
                     <li class="dropdown">Hospital Information
                         <div class="nav-dropdown">
-                            <div class="nav-dropdown-item">Telemedicine Software</div>
+                            <div class="nav-dropdown-item"><a href="./telemedicine.html">Telemedicine Software</a></div>
                             <div class="nav-dropdown-item">Doctor Information</div>
                             <div class="nav-dropdown-item">Patient Information</div>
                         </div>
