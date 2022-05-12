@@ -94,7 +94,7 @@ nav li {
   list-style: none;
   padding: 0;
   position: absolute;
-  width: 15rem;
+  width: 16rem;
   background-color: #fff;
   border: rgb(190, 190, 190) solid 0.5px;
   overflow: visible;
@@ -115,6 +115,10 @@ nav li {
   line-height: 100%;
   padding: 1rem;
   text-align: left;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #EEE;
 }
 
 footer {
