@@ -134,6 +134,10 @@ footer {
   padding-top: 3rem;
   padding-bottom: 4rem;
 }
+footer a{
+  text-decoration: none;
+  color: inherit;
+}
 
 footer ul {
   list-style: none;
