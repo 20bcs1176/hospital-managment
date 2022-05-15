@@ -24,17 +24,18 @@
             </div>
             <div>
                 <ul class="nav-list">
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.php">Home</a></li>
                     <li class="dropdown">Hospital Information
                         <div class="nav-dropdown">
-                            <div class="nav-dropdown-item"><a href="./telemedicine.html">Telemedicine Software</a></div>
+                            <div class="nav-dropdown-item"><a href="./telemedicine.php">Telemedicine Software</a></div>
                             <div class="nav-dropdown-item"><a href="https://docs.google.com/spreadsheets/d/1oKX5b30xebD6-OUJ-KOOavsDBlxC3ml2eklEVDFflK0/edit?usp=sharing">Doctor Information</a></div>
                             <div class="nav-dropdown-item"><a href="https://docs.google.com/spreadsheets/d/1rwPcRGtEKvi_sL8zgmVdQaMF_5YJ54pdgFI8e2CROE4/edit?usp=sharing">Patient Information</a></div>
                         </div>
                     </li>
                     <li><a href="./Doctors.html">Doctor</a></li>
                     <li id="about-us">About us</li>
-                    <li><a href="./contact-us.html">Contact Us</a></li>
+                    <li><a href="./contact-us.php">Contact Us</a></li>
+					<li class="login-btn"><div>Login</div></li>
                 </ul>
             </div>
         </nav>
@@ -88,7 +89,7 @@
                 <ul>
                     <li>Products</li>
                     <li>Appointments</li>
-                    <li><a href="./telemedicine.html">Telemedicine Software</a></li>
+                    <li><a href="./telemedicine.php">Telemedicine Software</a></li>
                     <li>Appointment Scheduling Software</li>
                     <li>IVR Appointment Booking Software</li>
                 </ul>

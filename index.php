@@ -3,7 +3,14 @@
 <html lang="en-GB" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<?php 
+  if (session_status() != PHP_SESSION_ACTIVE){
+    if (session_start())
+      $_SESSION['loggedIn'] = false;
+  }
+?>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -1600,7 +1607,7 @@ a-->
                                 <ul class="elementskit-dropdown elementskit-submenu-panel">
                                   <li id="menu-item-1552"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1552 nav-item elementskit-mobile-builder-content">
-                                    <a href="./telemedicine.html" class="dropdown-item">Telemedicine Software</a>
+                                    <a href="./telemedicine.php" class="dropdown-item">Telemedicine Software</a>
                                   </li>
                                   <li id="menu-item-406"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-406 nav-item elementskit-mobile-builder-content">
@@ -1627,7 +1634,7 @@ a-->
 
                               <li id="menu-item-30"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 nav-item elementskit-mobile-builder-content">
-                                <a href="./contact-us.html" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Contact
+                                <a href="./contact-us.php" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Contact
                                   Us</a>
                               </li>
 
@@ -1662,12 +1669,26 @@ a-->
                       data-id="51fcc9a" data-element_type="widget" data-widget_type="button.default">
                       <div class="elementor-widget-container">
                         <div class="elementor-button-wrapper">
-                          <a href="./Login.html" class="elementor-button-link elementor-button elementor-size-sm"
-                            role="button" style="position: relative; bottom: 1rem">
-                            <span class="elementor-button-content-wrapper">
-                              <span class="elementor-button-text">Login</span>
-                            </span>
-                          </a>
+                        <?php 
+                          if ($_SESSION['loggedIn']){
+                            $text = "Logout " . $_SESSION['username'];
+                            $href = "./scripts/logout.php";
+                          }
+                          else{
+                            $text = "Login";
+                            $href = "./Login.html";
+                          }
+                          $htmlString = "<a href=\"$href\" class=\"elementor-button-link elementor-button elementor-size-sm\"
+                          role=\"button\" style=\"position: relative; bottom: 1rem\">
+                          <span class=\"elementor-button-content-wrapper\">
+                            <span class=\"elementor-button-text\">
+                              $text
+                              </span>
+                             </span>
+                          </a>";
+                          echo $htmlString;
+                                ?>
+                              
                         </div>
                       </div>
                     </div>
@@ -1865,7 +1886,7 @@ a-->
                               </li>
                               <li id="menu-item-30"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 nav-item elementskit-mobile-builder-content">
-                                <a href="./contact-us.html" class="ekit-menu-nav-link">Contact Us</a>
+                                <a href="./contact-us.php" class="ekit-menu-nav-link">Contact Us</a>
                               </li>
                             </ul>
                             <div class="elementskit-nav-identity-panel">
@@ -2093,7 +2114,7 @@ a-->
                               </li>
                               <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 nav-item elementskit-mobile-builder-content">
-                                <a href="./contact-us.html" class="ekit-menu-nav-link">Contact Us</a>
+                                <a href="./contact-us.php" class="ekit-menu-nav-link">Contact Us</a>
                               </li>
                             </ul>
                             <div class="elementskit-nav-identity-panel">
@@ -2767,7 +2788,7 @@ a-->
                               </li>
                               <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 nav-item elementskit-mobile-builder-content">
-                                <a href="./contact-us.html class=" ekit-menu-nav-link">Contact Us</a>
+                                <a href="./contact-us.php class=" ekit-menu-nav-link">Contact Us</a>
                               </li>
                             </ul>
                             <div class="elementskit-nav-identity-panel">
@@ -3356,7 +3377,7 @@ a-->
                                   data-id="e9c4a5a" data-element_type="widget" data-widget_type="button.default">
                                   <div class="elementor-widget-container">
                                     <div class="elementor-button-wrapper">
-                                      <a href="./contact-us.html" target="_blank"
+                                      <a href="./contact-us.php" target="_blank"
                                         class="elementor-button-link elementor-button elementor-size-sm" role="button">
                                         <span class="elementor-button-content-wrapper">
                                           <span class="elementor-button-text">Request Demo</span>
@@ -4923,7 +4944,7 @@ a-->
                       <div class="elementor-widget-container">
                         <ul class="elementor-icon-list-items">
                           <li class="elementor-icon-list-item">
-                            <a href="./telemedicine.html">
+                            <a href="./telemedicine.php">
                               <span class="elementor-icon-list-text">Telemedicine Software</span>
                             </a>
                           </li>

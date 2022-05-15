@@ -5,6 +5,7 @@
   --nav-width: 85%;
   --nav-height: 90px;
   --nav-bgcolor: #ffffff;
+  --nav-login-btn-height: 3.5em;
   --work-sans-font: "Work Sans", sans-serif;
 
   --footer-height: 300px;
@@ -58,7 +59,7 @@ nav ul {
 }
 nav a,
 nav a:active,
-nav a:visited{
+nav a:visited {
   text-decoration: none;
   color: inherit;
 }
@@ -71,6 +72,23 @@ nav li {
   font-family: var(--work-sans-font);
   text-transform: uppercase;
   color: #222222;
+}
+
+nav .login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-height);
+}
+
+nav .login-btn a {
+  background-color: #6ec1e4;
+  border-radius: 0.4em;
+  height: var(--nav-login-btn-height);
+  padding-left: 1em;
+  padding-right: 1em;
+  color: white;
+  line-height: var(--nav-login-btn-height);
 }
 
 .header-img-wrapper {
@@ -101,8 +119,12 @@ nav li {
 }
 
 @keyframes smooth-pop {
-    0% {transform: translateY(-0.5rem);}
-    100% {transform: translateY(0rem);}
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
 }
 .dropdown:hover .nav-dropdown {
   display: flex;
@@ -118,7 +140,7 @@ nav li {
 }
 
 .nav-dropdown-item:hover {
-  background-color: #EEE;
+  background-color: #eee;
 }
 
 footer {
@@ -134,7 +156,7 @@ footer {
   padding-top: 3rem;
   padding-bottom: 4rem;
 }
-footer a{
+footer a {
   text-decoration: none;
   color: inherit;
 }

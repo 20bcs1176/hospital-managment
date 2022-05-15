@@ -21,14 +21,14 @@
 	<header>
 		<nav>
 			<div class="img-wrapper">
-				<a href="./index.html"><img src="./img/logo.jpg" alt="Heritage Hospitals"></a>
+				<a href="./index.php"><img src="./img/logo.jpg" alt="Heritage Hospitals"></a>
 			</div>
 			<div>
 				<ul class="nav-list">
-					<li><a href="./index.html">Home</a></li>
+					<li><a href="./index.php">Home</a></li>
 					<li class="dropdown">Hospital Information
 						<div class="nav-dropdown">
-							<div class="nav-dropdown-item"><a href="./telemedicine.html">Telemedicine Software</a></div>
+							<div class="nav-dropdown-item"><a href="./telemedicine.php">Telemedicine Software</a></div>
 							<div class="nav-dropdown-item"><a
 									href="https://docs.google.com/spreadsheets/d/1oKX5b30xebD6-OUJ-KOOavsDBlxC3ml2eklEVDFflK0/edit?usp=sharing">Doctor
 									Information</a></div>
@@ -40,7 +40,22 @@
 					<li><a href=" ./Doctors.html">Doctor</a>
 					</li>
 					<li id="about-us">About us</li>
-					<li><a href="./contact-us.html">Contact Us</a></li>
+					<li><a href="./contact-us.php">Contact Us</a></li>
+					<li class="login-btn">
+						<?php 
+							if ($_SESSION['loggedIn']){
+								$text = "Logout " . $_SESSION['username'];
+								$href = "./scripts/logout.php";
+							  }
+							  else{
+								$text = "Login";
+								$href = "./Login.html";
+							  }
+
+							  $htmlString = "<a href=\"$href\">$text</a>";
+							  echo $htmlString;
+						?>
+					</li>
 				</ul>
 			</div>
 		</nav>
@@ -123,7 +138,7 @@
 				<ul>
 					<li>Products</li>
 					<li>Appointments</li>
-					<li><a href="./telemedicine.html">Telemedicine Software</a></li>
+					<li><a href="./telemedicine.php">Telemedicine Software</a></li>
 					<li>Appointment Scheduling Software</li>
 					<li>IVR Appointment Booking Software</li>
 				</ul>
