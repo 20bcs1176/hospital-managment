@@ -1,13 +1,13 @@
 <?php
-    if (session_start() == PHP_SESSION_ACTIVE){
-        unset ($_SESSION['credentials']);
-        $_SESSION['loggedIn'] = false;
-        
-        $url = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        str_replace("/scripts/logout.php", "/index.php", $url);
-        echo "
-            <script type=\"text/javascript\">
-                window.location.replace = \"$url\"
-            </script>";
+    session_start();
+    foreach($_SESSION as $key => $value) {
+        unset($_SESSION[$key]);
     }
+    $_SESSION['loggedIn'] = false;
+    session_destroy();
+
+    echo "
+        <script>
+            window.location.replace(\"../index.php \")
+        </script>";
 ?>

@@ -1,15 +1,13 @@
+<?php
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <!-- saved from url=(0021)https://docpulse.com/ -->
 <html lang="en-GB" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
-<?php 
-  if (session_status() != PHP_SESSION_ACTIVE){
-    if (session_start())
-      $_SESSION['loggedIn'] = false;
-  }
-?>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -1672,7 +1670,7 @@ a-->
                         <?php 
                           if ($_SESSION['loggedIn']){
                             $text = "Logout " . $_SESSION['username'];
-                            $href = "./scripts/logout.php";
+                            $href = "./php/logout.php";
                           }
                           else{
                             $text = "Login";
@@ -4447,6 +4445,7 @@ a-->
                                                 </div>
                                               </div>
                                             </section>
+
                                             <section
                                               class="elementor-element elementor-element-73fd176 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
                                               data-id="73fd176" data-element_type="section">

@@ -1,13 +1,11 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<?php 
-	if (session_status() != PHP_SESSION_ACTIVE){
-		if (session_start())
-		$_SESSION['loggedIn'] = false;
-	}
-	?>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +49,7 @@
 						<?php 
 							if ($_SESSION['loggedIn']){
 								$text = "Logout " . $_SESSION['username'];
-								$href = "./scripts/logout.php";
+								$href = "./php/logout.php";
 							  }
 							  else{
 								$text = "Login";
@@ -110,7 +108,7 @@
 			</div>
 
 			<div class='form-element'>
-				<label for='email'>Email</label>
+	<label for='email'>Email</label>
 				<input type='email' name='email' id='email' required>
 			</div>
 
@@ -139,15 +137,13 @@
 			<input type='submit' value='Submit'>
 		</form>
 			";
-			
-			if ($_SERVER['submitSucessful'] == 1)
+
+			if ($_SESSION['submitSucessful'] == 1)
 				echo $sucessfulDOM;
-			else if($_SERVER['submitSucessful'] == -1)
+			else if($_SESSION['submitSucessful'] == -1)
 				echo $errorDOM;
 			else
 				echo $defaultDOM;
-
-			echo var_dump($_SESSION);
 		?>
 
 			

@@ -1,13 +1,10 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php 
-    if (session_status() != PHP_SESSION_ACTIVE){
-        if (session_start())
-        $_SESSION['loggedIn'] = false;
-    }
-    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +50,7 @@
                         <?php 
 							if ($_SESSION['loggedIn']){
 								$text = "Logout " . $_SESSION['username'];
-								$href = "./scripts/logout.php";
+								$href = "./php/logout.php";
 							  }
 							  else{
 								$text = "Login";
@@ -116,7 +113,6 @@
 
             <div class="grid-table-item"><img src="./img/telemedicine-EMR.png" alt="EMR Integration"></div>
         </div>
-
         <div class="feature">
             <h3>Features</h3>
             <p>We have everything you need and more!</p>

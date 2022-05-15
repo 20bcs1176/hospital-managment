@@ -39,6 +39,11 @@
     width: 100%;
 }
 
+.msg{
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
 
 .man-form{
     font-family: Arial, Helvetica, sans-serif;
