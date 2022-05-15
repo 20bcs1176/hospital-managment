@@ -1299,6 +1299,8 @@ left: 106px;
                   </div>
                 </div>
               </div>
+              
+              
               <div
                 class="elementor-element elementor-element-cef2c23 elementor-column elementor-col-25 elementor-top-column"
                 data-id="cef2c23" data-element_type="column">
@@ -3424,6 +3426,10 @@ a-->
             </div>
           </div>
         </section>
+        <?php
+                require_once('./php/show-debug.php');
+                debug();
+              ?>
         <section
           class="elementor-element elementor-element-3f53ec2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
           data-id="3f53ec2" data-element_type="section">

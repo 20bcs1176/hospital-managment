@@ -26,20 +26,27 @@
                     <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
                     <button type='button' onclick='register()' class='toggle-btn'>Register</button>
                 </div>
-                <form id='login' class='input-group-login'>
-                    <input name="Email_Id" id="email" type='text' class='input-field' placeholder='Email Id' required>
+
+
+
+                <form id='login' class='input-group-login' method="post"
+                action="./php/validate.php">
+                    <input name="Email" id="email" type='text' class='input-field' placeholder='Email Id' required>
                     <input type='password' name="Password" id="password" class='input-field' placeholder='Enter password' required>
                     <input type='checkbox' class='check-box'><span class="rem-pass">Remember Password</span>
-                    <button type='button' class='submit-btn' value="Submit" onclick="register()">Submit</button>
+                    <input type='submit' class='submit-btn' value="Submit"></button>
                 </form>
 
                 <form id='register' class='input-group-register' method="post" action="./submit.php">
                     <input type='text' name="First_Name" class='input-field' placeholder='First Name' required>
                     <input type='text' name="Last_Name" class='input-field' placeholder='Last Name' required>
-                    <input type='email' class='input-field' placeholder='Email Id' name="EmailId" required>
-                    <input type='password' name="Enter_Password" class='input-field' placeholder='Enter Password'
+                    <input type='email' class='input-field' placeholder='Email Id' name="Email" required id="email-reg">
+
+                    <input type='text' class='input-field' placeholder='UserName' name="UserName" required>
+                    
+                    <input type='password' name="Password" class='input-field' placeholder='Enter Password' id="password-reg"
                         required>
-                    <input type='password' name="Confirm_Password" class='input-field' placeholder='Confirm Password'
+                    <input type='password' name="Confirm_Password" class='input-field' placeholder='Confirm Password' id="confirm-passsword-reg"
                         required>
                     <input type='checkbox' class='check-box'><span class="rem-pass">I agree to the terms and
                         conditions</span>
@@ -75,8 +82,8 @@
             console.log('Clicked!!');
             var email_value = email.value;
             var password_value = password.value;
+
             email_value.trim();
-            password_value.trim();
             if (!email_value){
                 alert('Please enter a valid email');
                 e.preventDefault();
@@ -87,11 +94,12 @@
                 e.preventDefault();
                 return;
             }
-            const credentials = {
-                email: email.value,
-                password: password.value
-            };
-            fetch('./')
+
+
+
+            fetch('./php/validate.php')
+                .then(response => response.text())
+                .then(data => console.log(data));
         });
     </script>
 </body>

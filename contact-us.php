@@ -144,6 +144,7 @@
 				echo $errorDOM;
 			else
 				echo $defaultDOM;
+			$_SESSION['submitSucessful'] = 0;
 		?>
 
 			
