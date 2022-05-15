@@ -131,7 +131,8 @@
 
 			<div class='form-element'>
 				<label for='message'>Message</label>
-				<textarea rows='10' name='message' id='message'></textarea>
+				<textarea rows='10' name='message' id='message'>
+				</textarea>
 			</div>
 
 			<br>
@@ -145,6 +146,8 @@
 				echo $errorDOM;
 			else
 				echo $defaultDOM;
+
+			echo var_dump($_SESSION);
 		?>
 
 			

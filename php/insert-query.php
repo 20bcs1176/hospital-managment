@@ -1,4 +1,8 @@
 <?php 
+    $url = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $url = str_replace("/php/insert-query.php", "/contact-us.php", $url);
+    header("Location: ../contact-us.php");
+    
     require_once('./connection.php');
 
     $fName = $_POST['fName'];
@@ -17,10 +21,13 @@
     else
         $_SESSION['submitSucessful'] = -1;
 
-    $url = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    str_replace("/scripts/insert-query.php", "/contact-us.php", $url);
-    echo "
-        <script type=\"text/javascript\">
-            window.location.replace = \"$url\"
-        </script>";
+    // echo "
+    //     <html>
+    //     <head></head>
+    //     <body>
+    //     <script>
+    //         window.location.replace = \"$url\";
+    //     </script>
+    //     </body>
+    //     </html>";
 ?>
