@@ -18,4 +18,8 @@
         $result = $conn->query($query);
         return $result ?? NULL;
     }
+    function makeInsertQuery($conn, $query){
+        $result = $conn->query($query);
+        return $result ?? NULL;
+    }
 ?>

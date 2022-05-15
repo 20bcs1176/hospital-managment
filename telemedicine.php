@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <?php 
+    if (session_status() != PHP_SESSION_ACTIVE){
+        if (session_start())
+        $_SESSION['loggedIn'] = false;
+    }
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

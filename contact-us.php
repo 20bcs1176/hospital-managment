@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+	<?php 
+	if (session_status() != PHP_SESSION_ACTIVE){
+		if (session_start())
+		$_SESSION['loggedIn'] = false;
+	}
+	?>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,42 +90,64 @@
 		<h2>Request a Demo</h2>
 		<h4>Write to us, and we will call you.</h3>
 
+		<?php
+			$sucessfulDOM = "
+				<div class='msg'>
+					<p>Your request has been sent successfully.</p>
+				</div>";
 
-			<form action="_" method="post" class="man-form">
-				<h2 class="heading">Contact Us</h2>
-				<div class="form-element">
-					<label for="fName">First Name</label>
-					<input type="text" name="fName" id="fName" required>
-				</div>
+			$errorDOM = "
+				<div class='msg'>
+					<p>There was an error sending your request. Please try again later.</p>
+				</div>";
+			
+			$defaultDOM = "
+			<form action='./php/insert-query.php' method='post' class='man-form'>
+			<h2 class='heading'>Contact Us</h2>
+			<div class='form-element'>
+				<label for='fName'>First Name</label>
+				<input type='text' name='fName' id='fName' required>
+			</div>
 
-				<div class="form-element">
-					<label for="email">Email</label>
-					<input type="email" name="email" id="email" required>
-				</div>
+			<div class='form-element'>
+				<label for='email'>Email</label>
+				<input type='email' name='email' id='email' required>
+			</div>
 
-				<div class="form-element">
-					<label for="mobile">Mobile Number</label>
-					<input type="tel" name="mobile" id="mobile">
-				</div>
+			<div class='form-element'>
+				<label for='mobile'>Mobile Number</label>
+				<input type='tel' name='mobile' id='mobile'>
+			</div>
 
-				<div class="form-element">
-					<label for="orgName">Clinic/Hospital/Org Name</label>
-					<input type="text" name="orgName" id="orgName">
-				</div>
+			<div class='form-element'>
+				<label for='orgName'>Clinic/Hospital/Org Name</label>
+				<input type='text' name='orgName' id='orgName'>
+			</div>
 
-				<div class="form-element">
-					<label for="city">City</label>
-					<input type="text" name="city" id="city">
-				</div>
+			<div class='form-element'>
+				<label for='city'>City</label>
+				<input type='text' name='city' id='city'>
+			</div>
 
-				<div class="form-element">
-					<label for="message">Message</label>
-					<textarea rows="10" name="message" id="message"></textarea>
-				</div>
+			<div class='form-element'>
+				<label for='message'>Message</label>
+				<textarea rows='10' name='message' id='message'></textarea>
+			</div>
 
-				<br>
-				<input type="submit" value="Submit">
-			</form>
+			<br>
+			<input type='submit' value='Submit'>
+		</form>
+			";
+			
+			if ($_SERVER['submitSucessful'] == 1)
+				echo $sucessfulDOM;
+			else if($_SERVER['submitSucessful'] == -1)
+				echo $errorDOM;
+			else
+				echo $defaultDOM;
+		?>
+
+			
 	</section>
 
 	<footer>

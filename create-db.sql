@@ -29,6 +29,15 @@ CREATE OR REPLACE TABLE Patients(
 
 ALTER TABLE Patients AUTO_INCREMENT = 1000;
 
+CREATE OR REPLACE TABLE Queries(
+    FirstName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Mobile VARCHAR(255),
+    Organisation VARCHAR(255),
+    City VARCHAR(255),
+    Message VARCHAR(255)
+);
+
 CREATE OR REPLACE TABLE Users (
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255),
