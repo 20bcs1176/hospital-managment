@@ -47,26 +47,8 @@
     <section>
 
 <?php
-    $connDetails = array(
-        'host' => 'localhost',
-        'user' => 'root',
-        'pass' => '',
-        'db' => 'hospital'
-    );
-    function makeConn($connDetails){
-        $conn = new mysqli(
-            $connDetails['host'],
-            $connDetails['user'],
-            $connDetails['pass'],
-            $connDetails['db']
-        );
-        return $conn ?? NULL;
-    }
-    function makeReadQuery($conn, $query){
-        $result = $conn->query($query);
-        return $result ?? NULL;
-    }
 
+    require_once('./php/connection.php');
 
     $conn = makeConn($connDetails);
 ?>
@@ -82,8 +64,8 @@
 
                     $result = makeReadQuery($conn, "SELECT * FROM Doctors_Name");
                     while($doctor = $result->fetch_assoc())
-                        echoOption($doctor['Doctor_Id'], $doctor['First_name'].' '
-                        .$doctor['Last_name']);
+                        echoOption($doctor['Doctor_Id'], $doctor['Firstname'].' '
+                        .$doctor['Lastname']);
                 ?>
             </select>
         </form>

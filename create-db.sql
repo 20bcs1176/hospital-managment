@@ -1,11 +1,11 @@
-CREATE DATABASE IF NOT EXISTS hospital;
+CREATE OR REPLACE DATABASE hospital;
 
 USE hospital;
 
-CREATE TABLE IF NOT EXISTS Doctors(
+CREATE OR REPLACE TABLE Doctors(
     Doctor_ID int NOT NULL AUTO_INCREMENT,
-    First_name VARCHAR(255),
-    Last_name VARCHAR(255),
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
     Age int,
     Phone VARCHAR(15),
     Dept VARCHAR(255),
@@ -13,10 +13,10 @@ CREATE TABLE IF NOT EXISTS Doctors(
 );
 ALTER TABLE Doctors AUTO_INCREMENT = 100;
 
-CREATE TABLE IF NOT EXISTS Patients(
+CREATE OR REPLACE TABLE Patients(
     Patient_ID int not NULL AUTO_INCREMENT,
-    First_name VARCHAR(255),
-    Last_name VARCHAR(255),
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
     Age int,
     Phone VARCHAR(255),
     Dept VARCHAR(255),
@@ -29,19 +29,20 @@ CREATE TABLE IF NOT EXISTS Patients(
 
 ALTER TABLE Patients AUTO_INCREMENT = 1000;
 
-CREATE TABLE IF NOT EXISTS Credentials (
-    First_name VARCHAR(255) NOT NULL,
-    Last_name VARCHAR(255),
+CREATE OR REPLACE TABLE Users (
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255),
     Email VARCHAR(255) NOT NULL,
+    UserName VARCHAR(255) NOT NULL,
     Password VARCHAR(255) NOT NULL
 );
 
-CREATE VIEW IF NOT EXISTS Doctors_Name AS 
-    SELECT Doctor_ID, First_name, Last_name FROM Doctors;
-CREATE VIEW IF NOT EXISTS Patients_Name AS
-    SELECT Patient_ID, First_name, Last_name FROM Patients;
+CREATE OR REPLACE VIEW Doctors_Name AS 
+    SELECT Doctor_ID, FirstName, LastName FROM Doctors;
+CREATE OR REPLACE VIEW Patients_Name AS
+    SELECT Patient_ID, FirstName, LastName FROM Patients;
 
-INSERT INTO Doctors(First_name, Last_name, Age, Phone, Dept) VALUES
+INSERT INTO Doctors(FirstName, LastName, Age, Phone, Dept) VALUES
     ('Raju', 'Rastogi', 45, '9988776655', 'Cardiology'),
     ('Seema', 'Khurana', 51, '9988776654', 'Nuerology'),
     ('Nihal', 'Khamble', 51, '9988776652', 'Pediatrics');
