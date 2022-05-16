@@ -13,14 +13,15 @@
 
     $result = makeInsertQuery($conn, $query);
     if ($result) {
-        echo "New record is inserted sucessfully<br>";
+        $sucess = true;
+        http_response_code(200);
     }
     else {
-        echo "Error: ". $query ."". $conn->error;
-        echo "<br>";
+        $sucess = false;
+        http_response_code(500);
     }
 
-    echo "Redirecting to homepage in 5 seconds...";
+    echo  ($sucess?"Sucessfull":"Unsucessfull") . "Redirecting to homepage in 5 seconds...";
     echo "
     <script>
         setTimeout(function(){

@@ -79,6 +79,7 @@ a {
   display: flex;
   justify-content: start;
   align-items: center;
+  height: fit-content;
 }
 .form-box {
   width: 380px;

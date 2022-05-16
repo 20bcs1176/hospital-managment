@@ -37,12 +37,12 @@
                     <input type='submit' class='submit-btn' value="Submit"></button>
                 </form>
 
-                <form id='register' class='input-group-register' method="post" action="./submit.php">
-                    <input type='text' name="First_Name" class='input-field' placeholder='First Name' required>
-                    <input type='text' name="Last_Name" class='input-field' placeholder='Last Name' required>
+                <form id='register' class='input-group-register'>
+                    <input type='text' name="First_Name" class='input-field' placeholder='First Name' id="fName" required>
+                    <input type='text' name="Last_Name" class='input-field' placeholder='Last Name' id="lName" required>
                     <input type='email' class='input-field' placeholder='Email Id' name="Email" required id="email-reg">
 
-                    <input type='text' class='input-field' placeholder='UserName' name="UserName" required>
+                    <input type='text' class='input-field' placeholder='UserName' name="UserName" id="username" required>
                     
                     <input type='password' name="Password" class='input-field' placeholder='Enter Password' id="password-reg"
                         required>
@@ -51,7 +51,7 @@
                     <input type='checkbox' class='check-box'><span class="rem-pass">I agree to the terms and
                         conditions</span>
 
-                    <input type='submit' class='submit-btn' value="Register">
+                    <input type="submit" class="submit-btn" id="register-btn">Register</button>
                 </form>
             </div>
         </div>
@@ -75,32 +75,43 @@
     </script>
 
     <script>
-        const login_btn = document.querySelector('button.submit-btn');
-        login_btn.addEventListener('click', (e) => {
-            const email = document.querySelector('input#email');
-            const password = document.querySelector('input#password');
-            console.log('Clicked!!');
-            var email_value = email.value;
-            var password_value = password.value;
+        register_form = document.getElementById('register');
+        register.onsubmit = function(e) {
+            e.preventDefault();
 
-            email_value.trim();
-            if (!email_value){
-                alert('Please enter a valid email');
-                e.preventDefault();
-                return;
-            }
-            if (!password_value){
-                alert('Please enter a valid password');
-                e.preventDefault();
-                return;
-            }
+            var response = fetch('./php/register.php', {
+                method: 'POST',
+                body: new FormData(register_form)
+            });
+            let result = await response.json();
+            console.log(result);
+        }
 
-
-
-            fetch('./php/validate.php')
-                .then(response => response.text())
-                .then(data => console.log(data));
-        });
+        // const register_btn = document.querySelector('button#register-btn');
+        // register_btn.addEventListener('click', (e) => {
+            // const email = document.querySelector('input#email-reg');
+            // const password = document.querySelector('input#password-reg');
+            // const confirm_password = document.querySelector('input#confirm-password-reg');
+            // const username = document.querySelector('input#userName')
+            // const fName = document.querySelector('input#fName');
+            // const lName = document.querySelector('input#lName');
+// 
+            // console.log('Clicked!!');
+            // var email_value = email.value;
+            // var password_value = password.value;
+            // const details = {
+                // 'FirstName': fName.value,
+                // 'LastName': lName.value,
+                // 'Email': email_value,
+                // 'UserName': username.value,
+                // 'Password': password_value
+            // }
+            // if (confirm_password.value == password_value) {
+                // console.log('Passwords match');
+            // }else {
+                // alert('Password does not match');
+            // }
+        // });
     </script>
 </body>
 
