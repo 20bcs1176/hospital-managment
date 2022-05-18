@@ -1,5 +1,7 @@
 <?php
     session_start();
+    if (!isset($_SESSION['loggedIn']))
+     $_SESSION['loggedIn'] = false;    
 ?>
 
 
@@ -3426,10 +3428,8 @@ a-->
             </div>
           </div>
         </section>
-        <?php
-                require_once('./php/show-debug.php');
-                debug();
-              ?>
+
+        
         <section
           class="elementor-element elementor-element-3f53ec2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
           data-id="3f53ec2" data-element_type="section">
